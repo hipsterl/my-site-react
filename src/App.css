@@ -1,38 +1,610 @@
-.App {
+body{
+  margin:0px;
+  padding: 0px;
+  background-color:#161616;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+ul{
+  padding-inline-start: 0;
+  list-style:none;    
+}
+
+a{
+  text-decoration: none;
+ 
+}
+
+
+#main{
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #edf1fd;
+  position: relative;
+  background-image: url(./img/595816670-removebg-preview.png); 
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: right;
+  
+}
+
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-family: calibri;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 50px;
+  background-color: #f4f7ff;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.05);
+  z-index: 1;
+}
+
+.menu{
+  display: flex;
+  margin-left: -90px;
+}
+
+
+
+.menu li a{
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  color: #6c707c;
+  font-size: 15px;
+}
+
+.lang{
+  color: #292929;
+}
+
+.logo{
+  font-size: 25px;
+  font-weight: bold;
+  color: #292929;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.menu li a::after{
+  /*background-color: #292929;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  transition: all ease 0.4s;*/
+  background-color: #696969;
+  display: block;
+  content: "";
+  height: 3px;
+  width: 0%;
+  -webkit-transition: width .3s ease-in-out;
+  -moz--transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+}
+
+.menu li a:hover:after,
+.menu li a:focus:after{
+  width: 100%;
+}
+
+
+.name{
+  font-family: calibri;
+  width: 500px;
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translate(-20%,-50%);
+}
+
+.name p:nth-child(1),
+.name .details{
+  color: #6c707c;
+  font-size: 16px;
+}
+
+.name h1{
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 40px;
+  margin: 0px;
+  letter-spacing: 3px;
+  color: #292929;
+}
+
+.social{
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  display: flex;
+}
+
+.social a{
+  margin: 6px 12px;
+}
+
+.social i{
+  color: rgba(18,17,17,0.4);
+  font-size: 30px;
+}
+
+.social a:hover i{
+  color: #17d1ac;
+  transition: all ease 0.5s;
+}
+
+.arrow{
+  align-self: end;
+  width: 50%;
+  height: 17%;
+  margin-bottom: 4em;
+  position: absolute;
+  bottom: 0px;
+  left: -11%;
+  border-right: 2px solid rgba(2, 2, 2, 0.5);
+}
+
+.arrow::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 11px 2px 11px;
+  border-color: #292929 transparent transparent transparent;
+  right: -0.75em;
+  bottom: -6px;
+}
+
+#about{
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5% 0px 5%;
+}
+
+.about img{
+outline:  8px solid #ffffff;
+outline-offset: -100px;
+border: 50px solid transparent;
+border-width:130px 70px 70px 140px;
+}
+
+.about-text{
+  font-family: calibri;
+  width: 50%;
+}
+
+.about-text h1{
+  font-size: 5rem;
+  color: #17d1ac;    
+}
+
+.about-text h2{
+  font-size: 3rem;
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+.about-text h1, h2{
+  margin: 0px;
+  padding: 0px;    
+}
+
+.about-text p{
+  font-size: 1.2 rem;
+  color: rgba(251,251,251,0.90);
+}
+
+.about-text button{
+  font-size: 15px;
+  font-weight: bold;
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #17d1ac;    
+}
+
+.about-text button:hover{
+  background: #FFFFFF;
+  transition: all ease 0.3s;
+}
+
+#skills{
+  width: 100%;
+  height: 100vh;
+  font-family: calibri;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(213, 213, 235);
+  
+}
+
+.skills-heading h1{
+  margin-top: 12%;
+  color:#FFFFFF;
+  font-size: 3rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.skills-heading p{
+  font-weight: bold;
+  text-indent:22em;
+  color: rgba(10, 4, 4, 0.3);
+  font-size: 1.1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.container{
+margin: 0 auto;
+width: 50%;
+background-color: #b2b2b2;
+border-radius: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sk{
+  text-align: right;
+  padding-right: 10px;
+  line-height: 30px;
+  color: white;
+  background-color: #2e2c2c;
+  border-radius:20px;
+}
+
+.one{
+  width: 95%;
+}
+
+.two{
+  width: 90%;
+}
+
+.three{
+  width: 85%;
+}
+
+.four{
+  width: 65%;
+}
+
+.five{
+  width: 40%;
+}
+
+#portfolio{
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: calibri;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 2% 20px 2%;
+}
+
+.p-heading{
+  font-family: calibri;
+  font-size: 1.7rem;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: 400;
+  padding: 10px 20px;
+  background-color: #292929;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.1);
+}
+
+.p-box{
+  background-color: #1f1f1f;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 2px 2px 13px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.p-container{
+  width: 80%;
+  height: 70vh;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.text-overlay{
+  font-family: calibri;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(23,209,172,0.89);
+  display: none;
+}
+
+.text-overlay h1,p{
+  color: #aca9a9;
+}
+
+.text-overlay h1{
+  font-size: 2.2rem;
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: 2px;
+}
+
+.text-overlay p{
+  font-size: 1.2rem;
+  margin: 0px;
+}
+
+.p-box:hover .text-overlay{
+display: flex;
+}
+
+.p-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#contact-btn h1{
+  font-size: 2rem;
+  color: #1e1e1e;
+  font-family: calibri;
+  margin: 10px;
+  padding: 5px;
+  letter-spacing: 4px;
+}
+
+#contact-btn{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #eaebf0;
+  margin: 20px 0px;
+  box-sizing: border-box;
+  box-shadow: 2px 0px 20px rgba(0,0,0,0.4);
+}
+
+#contact-btn a{
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-family: calibri;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  background-color: #1e1e1e;
+  box-shadow: 2px 5px 6px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-btn a:hover{
+  background-color: #17d1ac;
+  color: #000000;
+  transition: all ease 0.5s;
+  font-weight: 700;
+}
+
+#contact-form{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-form form{
+  display: flex;
+  width: 70%;
+  height: 60vh;
+  background-color: #1a1a1a;
+  box-shadow: 2px 12px 20px rgba(0,0,0,0.2);
+  border: 1px solid(255,255,255,0.01);
+}
+
+.contact-left{
+  width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.contact-right{
+  width: 60%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+.c-heading{
+  font-family: calibri;
+  color: #FFFFFF;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.f-e-mail, 
+.f-name{
+  display: flex;
+  flex-direction: column;
+  font-family: calibri;
+}
+
+.f-e-mail font, 
+.f-name font{
+  color: #bfbfbf;
+  font-size: 22px;
+}
+
+.f-e-mail input, 
+.f-name input{
+ height: 30px;
+ width: 250px;
+ border: none;
+ outline: none;
+ background-color: transparent;
+ border-bottom: 1px solid #929292;
+ color: #FFFFFF;
+ margin: 10px 0px;
+}
+
+.f-e-mail input::placeholder, 
+.f-name input::placeholder{
+  opacity: 0.5;
+  letter-spacing: 1px;
+}
+
+.f-e-mail input:focus, 
+.f-name input:focus{
+  border-bottom: 1x solid #17d1ac;
+  transition: all ease 0.5s;
+}
+
+.message font{
+  font-size: 18px;
+  color: #4e4e4e;
+  font-family: calibri;
+}
+
+.message{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right textarea{
+  width: 100% !important;
+  height: 320px !important;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  color: #ebebeb;
+  font-size: 16px;
+}
+
+.contact-right textarea::placeholder{
+  color: #ebebeb;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: calibri;
+}
+
+.contact-right button{
+  width: 100%;
+  height: 50px;
+  background-color: #1ed98b;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  margin: 0px;
+  color: #1b1b1b;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#post-contact{
+  padding-top: 70px;
+  box-sizing: border-box;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
 }
 
-.App-link {
-  color: #61dafb;
+.icon,
+.content{
+  width: 50%;
+  float: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left-ps:after {
+  content: "";
+  display: table;
+  clear: both;
 }
+
+.icon{
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.iconBox img{
+  float: left;
+  filter: grayscale(1);
+  transition: 0.5s;
+  transform: scale(0.5);
+}
+
+.iconBox.active img{
+  filter: grayscale(0);
+  transform: scale(1);
+  transition-delay: 0.1s;
+}
+
+.content{
+  line-height: 5em;
+}
+
+.contentBox{
+  position: absolute;
+  width: 40%;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  transition: 0.8s;
+  transform: scale(0.4);
+  opacity: 0;
+}
+
+.contentBox.active{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.contentBox h2{
+  font-size: 3em;
+
+}
+
